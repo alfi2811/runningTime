@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Select from 'react-select';
 
 
 export default class Greetings extends Component{    
@@ -15,8 +14,14 @@ export default class Greetings extends Component{
 
     greetingTime = (times) => {
         const Hours = times.getHours().toString();        
-        const nm = 'Dian'
-        if(Hours >= 6 && Hours < 12){
+        const Minutes = times.getMinutes().toString();
+        const nm = 'Dian';
+        if (Hours == 23 && Minutes == 6){            
+            this.setState({
+                sayGreet: 'Love You, ' + nm
+            })
+        }         
+        else if(Hours >= 6 && Hours < 12){
             this.setState({
                 sayGreet: 'Good Morning, ' + nm
             })
