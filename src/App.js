@@ -1,17 +1,16 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import Timer from "./component/Timer/Timer";
-import Greetings from "./component/Greetings/Greetings";
-import Feeling from './component/Feeling/Feeling';
+import NavBar from './component/NavBar/NavBar';
+import Home from './Home/Home';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App">      
       <header className="App-header">        
-        <Timer />
-        <Greetings />       
-        <Feeling /> 
+        <div className="App-content">
+          <NavBar />
+        </div>
+        <Home />
       </header>
     </div>
   );

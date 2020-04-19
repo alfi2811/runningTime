@@ -52,6 +52,12 @@ h1 {
   background-size: cover;      
 }
 
+.App-content{  
+  position: absolute;
+  right: 92%;
+  bottom: 87%;
+}
+
 .App-link {
   color: #61dafb;
 }
