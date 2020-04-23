@@ -24,8 +24,9 @@ export default class Feeling extends Component{
                 motivasi : 'Happy kenapa nih? Boleh dong cerita. Kalo udah happy jangan sampe badmood yaaaa!'                                   
             })
         }  else if(selectedOption.value === 'mager'){
+            let nm = localStorage.getItem('myName');
             this.setState({
-                motivasi: 'Dian jangan mager ya, tetep semangat buat ngerjain tugas dan laprak nya. Kalo udah ambis jangan lupa istirahat ya. Tubuh juga butuh istirahat, bukan hati doangan hehe. '                       
+                motivasi: 'Hey ' + nm + ' jangan mager ya, tetep semangat buat ngerjain tugas dan laprak nya. Kalo udah ambis jangan lupa istirahat ya. Tubuh juga butuh istirahat, bukan hati doangan hehe. '                       
             })
         }
         console.log(this.state.motivasi)

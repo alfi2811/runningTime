@@ -2,20 +2,32 @@ import React, { Component } from 'react';
 
 
 export default class Greetings extends Component{    
+    constructor(){
+        super();        
+    }
     state = {
         sayGreet : '',
         motivasi : '',        
     }
-    componentDidMount(){
-        const date = new Date()
-        this.greetingTime(date)  
+    componentDidMount(){        
+        let nm = localStorage.getItem('myName');
+        if(nm == null){
+            console.log("hae");
+            nm = prompt("What is Your Name");
+            // setter
+            localStorage.setItem('myName', nm);
+        } 
+        const date = new Date();        
+        this.greetingTime(date, nm);        
     }    
     
 
-    greetingTime = (times) => {
+    greetingTime = (times, nm) => {
         const Hours = times.getHours().toString();        
-        const Minutes = times.getMinutes().toString();
-        const nm = 'Dian';
+        const Minutes = times.getMinutes().toString();        
+        // getter        
+        nm = localStorage.getItem('myName');
+    
         if (Hours == 23 && Minutes == 6){            
             this.setState({
                 sayGreet: 'Love You, ' + nm
