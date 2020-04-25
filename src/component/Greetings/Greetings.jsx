@@ -11,7 +11,7 @@ export default class Greetings extends Component{
     }
     componentDidMount(){        
         let nm = localStorage.getItem('myName');
-        if(nm == null){
+        while(nm == null || nm == "null"){
             console.log("hae");
             nm = prompt("What is Your Name");
             // setter
