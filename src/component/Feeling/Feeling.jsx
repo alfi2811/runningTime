@@ -10,8 +10,7 @@ export default class Feeling extends Component{
     feelChange = selectedOption  => {
         this.setState({ selectedOption });     
         console.log(selectedOption.value);
-        if(selectedOption.value === 'kesel'){
-            console.log("HAE");
+        if(selectedOption.value === 'kesel'){            
             this.setState({
                 motivasi: 'Kesel? Kenapa kesel? Cerita dong. Jangan ketika lagi bahagia baru cerita, ketika kesal pun harus bercerita, ok!'
             }) 

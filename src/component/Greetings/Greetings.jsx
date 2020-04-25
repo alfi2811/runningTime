@@ -28,7 +28,7 @@ export default class Greetings extends Component{
         // getter        
         nm = localStorage.getItem('myName');
     
-        if (Hours == 23 && Minutes == 6){            
+        if (Hours == 23 && Minutes == 6 && (nm == "Dian" || nm == "dian" )){            
             this.setState({
                 sayGreet: 'Love You, ' + nm
             })
