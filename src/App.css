@@ -8,13 +8,11 @@ h1 {
   color: white;
 }
 .selectStyle{
-  margin: 0 auto;
-  max-width: 200px;  
+  margin: 0 auto;  
 }
 
 .labelF{
-  margin: 0px auto;
-  font-size: 40px;
+  margin: 0px auto;  
   color: white;
   padding-bottom: 10px;
 }
@@ -22,8 +20,7 @@ h1 {
   color: white;
 }
 
-.says-text{
-  font-size: 60px;
+.says-text{  
   font-weight: bold;
   margin-top: 0px;
   margin-bottom: 35px;
@@ -41,6 +38,45 @@ h1 {
   }
 }
 
+@media only screen and (max-width: 2000px) {
+    .App-content{
+      right: 92%;
+    }
+    .says-text{
+      font-size: 60px;
+    }
+    .labelF {
+      font-size: 40px;
+    }
+    .selectStyle {   
+      max-width: 200px;
+    }
+}
+@media only screen and (max-width: 764px) {
+    .App-content{
+      right: 80%;
+    }
+    .says-text{
+      font-size: 50px;
+    }
+}
+
+
+@media only screen and (max-width: 400px) {
+  .App-content{
+    right: 80%;
+  }
+  .says-text{
+    font-size: 30px;
+  }
+  .labelF {
+    font-size: 25px;
+  }
+  .selectStyle {  
+    max-width: 130px;
+  }
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -53,8 +89,7 @@ h1 {
 }
 
 .App-content{  
-  position: absolute;
-  right: 92%;
+  position: absolute;  
   bottom: 87%;
 }
 
