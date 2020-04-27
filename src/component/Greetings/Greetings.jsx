@@ -7,7 +7,8 @@ export default class Greetings extends Component{
     }
     state = {
         sayGreet : '',
-        motivasi : '',        
+        motivasi : '',   
+        undur    : 0,     
     }
     componentDidMount(){        
         let nm = localStorage.getItem('myName');
@@ -18,7 +19,18 @@ export default class Greetings extends Component{
             localStorage.setItem('myName', nm);
         } 
         const date = new Date();        
-        this.greetingTime(date, nm);        
+        this.greetingTime(date, nm);    
+        let tgl = date.getDate();
+        let bln = date.getMonth();
+        if(bln != 5){
+            this.setState({
+                undur : tgl - 23 ,                
+            }) 
+        } else {
+            this.setState({
+                undur : 7 + tgl,                
+            }) 
+        }        
     }    
     
 
@@ -72,7 +84,13 @@ export default class Greetings extends Component{
                         {
                             this.state.sayGreet 
                         }
-                    </p>                                     
+                    </p>   
+                    <p className="puasa">
+                        Puasa Hari ke-
+                        {
+                            this.state.undur
+                        }
+                    </p>                                  
                 </div>
             )
         }

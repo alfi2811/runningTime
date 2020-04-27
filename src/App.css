@@ -11,6 +11,13 @@ h1 {
   margin: 0 auto;  
 }
 
+.puasa{
+  padding-bottom: 5px;    
+  background: white;
+  color: #282c34;
+  margin: 0px auto; 
+}
+
 .labelF{
   margin: 0px auto;  
   color: white;
@@ -51,13 +58,21 @@ h1 {
     .selectStyle {   
       max-width: 200px;
     }
+    .puasa{
+      width: 20vw;
+      font-size: 28px;
+    }
 }
-@media only screen and (max-width: 764px) {
+@media only screen and (max-width: 768px) {
     .App-content{
       right: 80%;
     }
     .says-text{
       font-size: 50px;
+    }
+    .puasa{
+      width: 42vw;
+      font-size: 24px;
     }
 }
 
@@ -74,6 +89,10 @@ h1 {
   }
   .selectStyle {  
     max-width: 130px;
+  }
+  .puasa{
+    width: 40vw;
+    font-size: 18px;
   }
 }
 
