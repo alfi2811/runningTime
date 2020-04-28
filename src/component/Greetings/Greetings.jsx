@@ -1,36 +1,39 @@
 import React, { Component } from 'react';
-
+import Select from 'react-select';
 
 export default class Greetings extends Component{    
     constructor(){
-        super();        
-    }
-    state = {
-        sayGreet : '',
-        motivasi : '',   
-        undur    : 0,     
-    }
-    componentDidMount(){        
+        super();   
+        this.state = {
+            sayGreet : '',
+            motivasi : '',   
+            undur    : 0, 
+            dataPuasa : 0,
+            selectedNumber : null,    
+        }        
+    }    
+    componentDidMount(){                          
         let nm = localStorage.getItem('myName');
-        while(nm == null || nm == "null"){
-            console.log("hae");
+        while(nm == null || nm == "null"){            
             nm = prompt("What is Your Name");
             // setter
             localStorage.setItem('myName', nm);
         } 
         const date = new Date();        
-        this.greetingTime(date, nm);    
+        this.greetingTime(date, nm);          
         let tgl = date.getDate();
         let bln = date.getMonth();
         if(bln != 5){
             this.setState({
-                undur : tgl - 23 ,                
+                undur : tgl - 23 ,  
+                dataPuasa : tgl - 23,               
             }) 
         } else {
             this.setState({
-                undur : 7 + tgl,                
+                undur : 7 + tgl,                              
+                dataPuasa : 7 + tgl,
             }) 
-        }        
+        } 
     }    
     
 
@@ -69,8 +72,25 @@ export default class Greetings extends Component{
         }
     }
     
+    numberChange = selectedNumber  => {
+        this.setState({ selectedNumber });        
+        let ubah = this.state.dataPuasa - selectedNumber.value;
+        console.log(ubah);
+        if( ubah >= 0 ){
+            this.setState({
+                undur : ubah,
+            }) 
+        }          
+    }
 
-    render(){                     
+    render(){ 
+        const { selectedNumber, dataPuasa } = this.state;                
+        const options = [];  
+        for (let i = 1; i <= dataPuasa; i++){
+            options.push({
+                value: i, label: i
+            })
+        }
         if(this.state.sayGreet == ''){
             return (
                 <div>                   
@@ -88,9 +108,22 @@ export default class Greetings extends Component{
                     <p className="puasa">
                         Puasa Hari ke-
                         {
-                            this.state.undur
+                            this.state.undur                          
                         }
-                    </p>                                  
+                    </p>  
+                    <div className="skipPuasa">  
+                        <div className="textSkip">                            
+                            <p>Sudah Berapa Kali Tidak Puasa? </p>
+                        </div>
+                        <div className="selectSkip">
+                            <Select
+                                placeholder = 'Choose'
+                                value={selectedNumber}
+                                onChange={this.numberChange}
+                                options={options}
+                            /> 
+                        </div>                                             
+                    </div>                                 
                 </div>
             )
         }
