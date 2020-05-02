@@ -23,12 +23,14 @@ export default class Greetings extends Component{
         this.greetingTime(date, nm);          
         let tgl = date.getDate();
         let bln = date.getMonth();
-        if(bln != 5){
+        if(bln != 4){
+            console.log(date);
             this.setState({
                 undur : tgl - 23 ,  
                 dataPuasa : tgl - 23,               
             }) 
         } else {
+            console.log("AYE");
             this.setState({
                 undur : 7 + tgl,                              
                 dataPuasa : 7 + tgl,
@@ -94,7 +96,7 @@ export default class Greetings extends Component{
         if(this.state.sayGreet == ''){
             return (
                 <div>                   
-                    <iframe src="https://giphy.com/embed/kIRicSBQwa23pYExQT" width="240" height="240" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>                                                                                                                                
+                    <iframe src="https://giphy.com/embed/kIRicSBQwa23pYExQT" width="240" height="240" frameBorder="0" className="giphy-embed" allowFullScreen></iframe>                                                                                                                                
                 </div>
             )
         } else {
