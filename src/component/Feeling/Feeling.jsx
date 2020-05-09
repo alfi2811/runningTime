@@ -26,8 +26,13 @@ export default class Feeling extends Component{
             this.setState({
                 motivasi: 'Hey ' + nm + ' jangan mager ya, tetep semangat buat ngerjain tugasnya. Kalo udah ambis jangan lupa istirahat ya. Tubuh juga butuh istirahat, bukan hati doangan hehe. '                       
             })
-        }
-        console.log(this.state.motivasi)
+        }   else if(selectedOption.value === 'pusing'){
+            let nm = localStorage.getItem('myName');
+            this.setState({
+                motivasi: 'Hey ' + nm + ' pusing kenapa? Ada masalah? coba yuk cerita. Kalau nggak, isitrahat dulu sana. '                       
+            })
+        }    
+           
     }        
     
 
@@ -37,7 +42,8 @@ export default class Feeling extends Component{
             {value: 'kesel', label: 'Kesel'},
             {value: 'badmood', label: 'Badmood'},
             {value: 'happy', label: 'Happy'},
-            {value: 'mager', label: 'Mager'}
+            {value: 'mager', label: 'Mager'},
+            {value: 'pusing', label: 'Pusing'},
         ]      
         
             return(
