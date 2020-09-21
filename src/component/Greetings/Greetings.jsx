@@ -93,10 +93,10 @@ export default class Greetings extends Component{
         //         value: i, label: i
         //     })
         // }
-        if(this.state.sayGreet == ''){
+        if(this.state.sayGreet === ''){
             return (
                 <div>                   
-                    <iframe src="https://giphy.com/embed/kIRicSBQwa23pYExQT" width="240" height="240" frameBorder="0" className="giphy-embed" allowFullScreen></iframe>
+                    <iframe title="Bobo" src="https://giphy.com/embed/kIRicSBQwa23pYExQT" width="240" height="240" frameBorder="0" className="giphy-embed" allowFullScreen></iframe>
                 </div>
             )
         } else {
