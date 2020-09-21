@@ -107,7 +107,7 @@ export default class Greetings extends Component{
                             this.state.sayGreet 
                         }
                     </p>   
-                    <p className="puasa">
+                    {/* <p className="puasa">
                         Puasa Hari ke-
                         {
                             this.state.undur                          
@@ -125,7 +125,7 @@ export default class Greetings extends Component{
                                 options={options}
                             /> 
                         </div>                                             
-                    </div>                                 
+                    </div>                                  */}
                 </div>
             )
         }
